@@ -1,0 +1,156 @@
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+body {
+  min-height: 100vh;
+  background: #212534;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+h1 {
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+}
+.cocktail {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  font-family: 'Libre Baskerville', serif;
+;
+}
+
+.ingredients {
+  color: white;
+  font-size: 24px;
+  font-family: 'Libre Baskerville', serif;
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(88 199 250 / 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease;
+  width: 30%;
+}
+
+.cocktail:hover{
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.cocktail:hover:before,
+.cocktail:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+.cocktail::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.cocktail::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .ingredients {
+    bottom: -100%; /* Reset position for small screens */
+    top: 0; /* Position ingredients list at the top */
+    height: 60%; /* Adjust height for better fit */
+    transition: top 0.5s ease-in-out; /* Use top for smooth sliding */
+    width: 100%;
+  }
+
+  .cocktail-container:hover .ingredients {
+    top: 40px; /* Slide ingredients list down when hovering */
+  }
+}
+a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.user {
+  color: white;
+  font-size: 24px;
+  font-family: 'Libre Baskerville', serif;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
