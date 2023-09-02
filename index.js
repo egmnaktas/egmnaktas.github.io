@@ -3,11 +3,16 @@ import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 import path from "path";
+import { fileURLToPath } from 'url';
+
 
 // Create an Express app
 const app = express();
 const port = 3000;
-const path = path();
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // API URL for fetching random cocktails
 const API_URL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
