@@ -2,18 +2,22 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import path from "path";
 
 // Create an Express app
 const app = express();
 const port = 3000;
+const path = path();
 
 // API URL for fetching random cocktails
 const API_URL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
+app.set("views", path.join(__dirname, "views")); // Specify the directory where your EJS templates are located
+app.set("view engine", "ejs"); // Set EJS as the template engine
 
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Define a route handler for the root URL ("/")
 app.get("/", async (req, res) => {
