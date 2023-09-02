@@ -1,2 +1,26 @@
-<%- include ("/views/index.ejs") %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Random Cocktail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="cocktail-content"></div>
+  <script>
+    // Fetch the content from the server
+    fetch('/')
+      .then((response) => response.text())
+      .then((html) => {
+        // Insert the content into the "cocktail-content" div
+        document.getElementById('cocktail-content').innerHTML = html;
+      });
+  </script>
+</body>
+</html>
