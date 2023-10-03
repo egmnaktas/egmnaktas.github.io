@@ -1,4 +1,4 @@
-# Cocktail Recipe App
+# Mixology Magic
 This is a simple web application built with Node.js and Express.js that fetches a random cocktail recipe from an external API and displays it on a web page. It also lists the ingredients and instructions for making the cocktail.
 
 ## Prerequisites
