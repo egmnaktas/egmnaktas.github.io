@@ -47,7 +47,7 @@ The server will start and listen on port 3000 by default. You can access the app
 ## Acknowledgments
 * [TheCocktailDB](https://www.thecocktaildb.com) for providing the cocktail data through their API.
 ## License
-This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 * Egemen Aktas
