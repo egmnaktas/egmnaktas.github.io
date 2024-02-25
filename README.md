@@ -34,7 +34,7 @@ npm start
 ```
 The server will start and listen on port 3000 by default. You can access the application in your web browser at http://localhost:3000.
 
-2. On the home page, you will see a random cocktail recipe, including its name, image, ingredients, and instructions.
+2. On the home page, you will see a random cocktail recipe, including its name, image, ingredients, and instructions. It will display a new cocktail when you refresh it.
 
 ## Technologies Used
 * Node.js
