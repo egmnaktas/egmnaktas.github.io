@@ -1,4 +1,8 @@
 # Mixology Magic
+
+![MixologyMagic](https://github.com/egmnaktas/egmnaktas.github.io/assets/86255973/9b938417-e373-4219-a068-49b6c2186403)
+
+
 This is a simple web application built with Node.js and Express.js that fetches a random cocktail recipe from an external API and displays it on a web page. It also lists the ingredients and instructions for making the cocktail.
 
 ## Prerequisites
